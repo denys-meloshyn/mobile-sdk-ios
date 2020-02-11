@@ -1,12 +1,14 @@
+source 'https://github.com/crowdin/mobile-sdk-ios.git'
 use_frameworks!
 
 target 'CrowdinSDK_Example' do
   pod 'CrowdinSDK', :path => '../'
-  pod 'CrowdinSDK/Screenshots', :path => '../'
-  pod 'CrowdinSDK/IntervalUpdate', :path => '../'
-  pod 'CrowdinSDK/RealtimeUpdate', :path => '../'
-  pod 'CrowdinSDK/RefreshLocalization', :path => '../'
-  pod 'CrowdinSDK/Settings', :path => '../'
+  pod 'CrowdinProvider', :path => '../'
+  pod 'CrowdinScreenshots', :path => '../'
+  pod 'CrowdinIntervalUpdates', :path => '../'
+  pod 'CrowdinRealtimeUpdates', :path => '../'
+  pod 'CrowdinRefreshLocalization', :path => '../'
+  pod 'CrowdinSettings', :path => '../'
   pod 'SwiftLint'
   pod 'FileBrowser', :git => 'https://github.com/serhii-londar/FileBrowser.git'
   pod 'Firebase'

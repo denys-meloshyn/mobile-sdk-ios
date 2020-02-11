@@ -4,7 +4,7 @@ import XCTest
 class CrowdinSDKConfigTests: XCTestCase {
     func testConfigInitialization() {
         let config = CrowdinSDKConfig.config()
-        XCTAssertNil(config.crowdinProviderConfig)
+        XCTAssertNotNil(config)
     }
     
     func testConfigNotConfiguredEnterprise() {

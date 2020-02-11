@@ -9,6 +9,16 @@ class CrowdinSDKConfigTests: XCTestCase {
         self.providerConfig = CrowdinProviderConfig(hashString: "test_hash", localizations: ["en", "de", "uk"], sourceLanguage: "en")
     }
     
+    func testDefaultConfigInitialization() {
+        let config = CrowdinSDKConfig.config()
+        XCTAssertNil(config.crowdinProviderConfig)
+    }
+    
+    func testConfigInitialization() {
+        let config = CrowdinSDKConfig.config().with(crowdinProviderConfig: providerConfig)
+        XCTAssertNotNil(config.crowdinProviderConfig)
+    }
+    
     func testProviderConfigInitialization() {
         XCTAssert(providerConfig.hashString == "test_hash")
         
@@ -18,10 +28,5 @@ class CrowdinSDKConfigTests: XCTestCase {
         XCTAssert(providerConfig.localizations.contains("uk"))
         
         XCTAssert(providerConfig.sourceLanguage == "en")
-    }
-    
-    func testConfigInitialization() {
-        let config = CrowdinSDKConfig.config().with(crowdinProviderConfig: providerConfig)
-        XCTAssertNotNil(config.crowdinProviderConfig)
     }
 }
