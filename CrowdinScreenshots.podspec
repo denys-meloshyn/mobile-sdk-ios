@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |spec|
-  spec.name             = 'CrowdinSDK'
-  spec.version          = '1.1.0'
+  spec.name             = 'CrowdinScreenshots'
+  spec.version          = '1.0.4'
   spec.summary          = 'Crowdin iOS SDK delivers all new translations from Crowdin project to the application immediately'
   
   spec.description      = <<-DESC
@@ -34,9 +34,10 @@ Pod::Spec.new do |spec|
   spec.frameworks = 'UIKit'
   spec.static_framework = true
   spec.swift_version = '4.2'
-  spec.source_files = 'CrowdinSDK/Classes/CrowdinSDK/**/*'
   
-  spec.test_spec 'CrowdinSDK_Tests' do |test_spec|
-    test_spec.source_files = 'CrowdinSDK/Tests/Core/*.swift'
-  end
+  spec.source_files = 'CrowdinSDK/Classes/Features/ScreenshotFeature/**/*.swift'
+  spec.dependency 'CrowdinSDK'
+  spec.dependency 'CrowdinProvider'
+  spec.dependency 'CrowdinAPI'
+  spec.dependency 'CrowdinLogin'
 end
