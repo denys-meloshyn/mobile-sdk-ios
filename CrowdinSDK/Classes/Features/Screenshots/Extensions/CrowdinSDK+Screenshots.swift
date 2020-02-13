@@ -9,13 +9,17 @@ import Foundation
 import CrowdinSDK
 
 extension CrowdinSDK {
-    @objc class func initializeScreenshotFeature() {
+    @objc class func initializeScreenshotsFeature() {
         guard let config = CrowdinSDK.config else { return }
         if config.screenshotsEnabled {
             let crowdinProviderConfig = config.crowdinProviderConfig ?? CrowdinProviderConfig()
             let screenshotUploader = CrowdinScreenshotUploader(organizationName: config.loginConfig?.organizationName, hash: crowdinProviderConfig.hashString, sourceLanguage: crowdinProviderConfig.sourceLanguage)
             ScreenshotFeature.shared = ScreenshotFeature(screenshotUploader: screenshotUploader, screenshotProcessor: CrowdinScreenshotProcessor())
         }
+    }
+    
+    public class var screenshotsEnabled: Bool {
+        return ScreenshotFeature.shared != nil
     }
     
     public class func captureScreenshot(name: String, success: @escaping (() -> Void), errorHandler: @escaping ((Error?) -> Void)) {

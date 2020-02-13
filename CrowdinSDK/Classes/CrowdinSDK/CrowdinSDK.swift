@@ -197,12 +197,12 @@ extension CrowdinSDK {
 extension CrowdinSDK {
     /// Selectors for all feature initialization.
     ///
-    /// - initializeScreenshotFeature: Selector for Screenshots feature initialization.
+    /// - initializeScreenshotsFeature: Selector for Screenshots feature initialization.
 	/// - initializeRealtimeUpdatesFeature: Selector for RealtimeUpdates feature initialization.
 	/// - initializeIntervalUpdateFeature: Selector for IntervalUpdate feature initialization.
 	/// - initializeSettings: Selector for Settings feature initialization.
     enum Selectors: Selector {
-        case initializeScreenshotFeature
+        case initializeScreenshotsFeature
         case initializeRealtimeUpdatesFeature
         case initializeIntervalUpdateFeature
         case initializeSettings
@@ -219,7 +219,7 @@ extension CrowdinSDK {
         
         self.setupLoginIfNeeded()
         
-        self.initializeScreenshotFeatureIfNeeded()
+        self.initializeScreenshotsFeatureIfNeeded()
         
         self.initializeRealtimeUpdatesFeatureIfNeeded()
         
@@ -229,9 +229,9 @@ extension CrowdinSDK {
     }
     
     /// Method for screenshot feature initialization if Screenshot submodule is added.
-    private class func initializeScreenshotFeatureIfNeeded() {
-        if CrowdinSDK.responds(to: Selectors.initializeScreenshotFeature.rawValue) {
-            CrowdinSDK .perform(Selectors.initializeScreenshotFeature.rawValue)
+    private class func initializeScreenshotsFeatureIfNeeded() {
+        if CrowdinSDK.responds(to: Selectors.initializeScreenshotsFeature.rawValue) {
+            CrowdinSDK .perform(Selectors.initializeScreenshotsFeature.rawValue)
         }
     }
 	

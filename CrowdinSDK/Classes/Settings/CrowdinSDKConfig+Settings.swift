@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CrowdinSDK
 
 extension CrowdinSDKConfig {
     // Settings view enabled

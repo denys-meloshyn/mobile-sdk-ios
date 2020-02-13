@@ -19,6 +19,10 @@ extension CrowdinSDK {
         IntervalUpdateFeature.shared = nil
     }
     
+    public class var intervalUpdatesEnabled: Bool {
+        return IntervalUpdateFeature.shared?.enabled ?? false
+    }
+    
     class func initializeIntervalUpdateFeature() {
         guard let config = CrowdinSDK.config else { return }
         if config.intervalUpdatesEnabled {

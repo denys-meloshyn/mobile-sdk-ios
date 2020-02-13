@@ -12,6 +12,9 @@ let package = Package(
         .library(name: "CrowdinSDK", targets: ["CrowdinSDK"]),
         
         .library(name: "CrowdinScreenshots", targets: ["CrowdinScreenshots"]),
+        .library(name: "CrowdinRealtimeUpdates", targets: ["CrowdinRealtimeUpdates"]),
+        .library(name: "CrowdinIntervalUpdates", targets: ["CrowdinIntervalUpdates"]),
+        .library(name: "CrowdinSettings", targets: ["CrowdinSettings"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -28,5 +31,6 @@ let package = Package(
         .target(name: "CrowdinScreenshots", dependencies: ["CrowdinSDK"], path: "CrowdinSDK/Classes/Features/Screenshots/"),
         .target(name: "CrowdinRealtimeUpdates", dependencies: ["CrowdinSDK"], path: "CrowdinSDK/Classes/Features/RealtimeUpdates/"),
         .target(name: "CrowdinIntervalUpdates", dependencies: ["CrowdinSDK"], path: "CrowdinSDK/Classes/Features/IntervalUpdates/"),
+        .target(name: "CrowdinSettings", dependencies: ["CrowdinSDK"], path: "CrowdinSDK/Classes/Settings/"),
     ]
 )
