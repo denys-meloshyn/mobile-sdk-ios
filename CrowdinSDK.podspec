@@ -36,7 +36,7 @@ Pod::Spec.new do |spec|
   spec.swift_version = '4.2'
   spec.source_files = ['CrowdinSDK/Classes/CrowdinSDK/**/*', 'CrowdinSDK/Classes/CrowdinAPI/**/*', 'CrowdinSDK/Classes/Login/**/*', 'CrowdinSDK/Classes/Providers/Crowdin/**/*']
   
-  spec.dependency 'BaseAPI'
+  spec.dependency 'BaseAPI', '0.1.7'
   spec.dependency 'Starscream', '3.1.1'
   
   spec.test_spec 'CrowdinSDK_Tests' do |test_spec|
