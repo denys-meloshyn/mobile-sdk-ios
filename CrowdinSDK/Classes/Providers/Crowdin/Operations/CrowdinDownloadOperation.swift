@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import CrowdinAPI
 
-protocol CrowdinDownloadOperationProtocol {
+public protocol CrowdinDownloadOperationProtocol {
     var hashString: String { get }
     var filePath: String { get }
 }
 
-class CrowdinDownloadOperation: AsyncOperation, CrowdinDownloadOperationProtocol {
+public class CrowdinDownloadOperation: AsyncOperation, CrowdinDownloadOperationProtocol {
     var error: Error?
     
     var hashString: String

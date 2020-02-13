@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CrowdinSDK
 
 extension CrowdinSDKConfig {
     // Crowdin provider configuration

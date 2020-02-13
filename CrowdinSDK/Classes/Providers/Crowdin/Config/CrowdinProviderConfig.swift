@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CrowdinSDK
 
 @objcMembers public class CrowdinProviderConfig: NSObject {
     var hashString: String

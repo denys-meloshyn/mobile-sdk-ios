@@ -1,47 +1,12 @@
 PODS:
   - BaseAPI (0.1.7)
-  - CrowdinSDK (1.0.4):
-    - CrowdinSDK/Core (= 1.0.4)
-    - CrowdinSDK/CrowdinProvider (= 1.0.4)
-  - CrowdinSDK/Core (1.0.4)
-  - CrowdinSDK/CrowdinAPI (1.0.4):
+  - CrowdinAPI (1.1.0):
     - BaseAPI (= 0.1.7)
     - Starscream (~> 3.0.6)
-  - CrowdinSDK/CrowdinProvider (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-  - CrowdinSDK/IntervalUpdate (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-  - CrowdinSDK/LoginFeature (1.0.4):
-    - BaseAPI (= 0.1.7)
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-  - CrowdinSDK/RealtimeUpdate (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-    - CrowdinSDK/LoginFeature
-  - CrowdinSDK/RefreshLocalization (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-  - CrowdinSDK/Screenshots (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-    - CrowdinSDK/LoginFeature
-  - CrowdinSDK/Settings (1.0.4):
-    - CrowdinSDK/Core
-    - CrowdinSDK/CrowdinAPI
-    - CrowdinSDK/CrowdinProvider
-    - CrowdinSDK/IntervalUpdate
-    - CrowdinSDK/LoginFeature
-    - CrowdinSDK/RealtimeUpdate
-    - CrowdinSDK/RefreshLocalization
-    - CrowdinSDK/Screenshots
+  - CrowdinProvider (1.1.0):
+    - CrowdinAPI
+    - CrowdinSDK
+  - CrowdinSDK (1.1.0)
   - DateToolsSwift (4.0.0)
   - FAPanels (1.0.2)
   - FileBrowser (1.0.0)
@@ -110,12 +75,8 @@ PODS:
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
+  - CrowdinProvider (from `../`)
   - CrowdinSDK (from `../`)
-  - CrowdinSDK/IntervalUpdate (from `../`)
-  - CrowdinSDK/RealtimeUpdate (from `../`)
-  - CrowdinSDK/RefreshLocalization (from `../`)
-  - CrowdinSDK/Screenshots (from `../`)
-  - CrowdinSDK/Settings (from `../`)
   - DateToolsSwift
   - FAPanels
   - FileBrowser (from `https://github.com/serhii-londar/FileBrowser.git`)
@@ -125,7 +86,10 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
+  "git@github.com:serhii-londar/CrowdinSpecs.git":
+    - CrowdinAPI
   https://github.com/CocoaPods/Specs.git:
+    - BaseAPI
     - DateToolsSwift
     - FAPanels
     - Firebase
@@ -140,12 +104,12 @@ SPEC REPOS:
     - nanopb
     - R.swift
     - R.swift.Library
-    - SwiftLint
-  trunk:
-    - BaseAPI
     - Starscream
+    - SwiftLint
 
 EXTERNAL SOURCES:
+  CrowdinProvider:
+    :path: "../"
   CrowdinSDK:
     :path: "../"
   FileBrowser:
@@ -158,7 +122,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BaseAPI: 78f88151221ac5d2dcc2dda69cf3aab6773fd8eb
-  CrowdinSDK: 35cdb7b29cc3a36a2ca5bbcf50b7505764cbc697
+  CrowdinAPI: 377e907ab3066cd46ca44b385f379b16106748f4
+  CrowdinProvider: 8d50dc0fa0ba4a37ef466c7684fa4a8c57301232
+  CrowdinSDK: 333bedf9e485254d371573f97033956603a9f408
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   FAPanels: 520037c53f4ded152e8e6103d97f79b644473363
   FileBrowser: 7a361252fed9fe35d95735a39d149b1cac5601d0
@@ -177,6 +143,6 @@ SPEC CHECKSUMS:
   Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 7c41e65f3d6288c430545b40733246ac8e51376e
+PODFILE CHECKSUM: 1f35ec13aec9fd095aff344323268d4a1c8bf621
 
 COCOAPODS: 1.8.4

@@ -6,21 +6,21 @@
 //
 import Foundation
 
-protocol AnyAsyncOperation {
+public protocol AnyAsyncOperation {
     var failed: Bool { get }
     var state: AsyncOperation.State { get }
     func finish(with fail: Bool)
 }
 
-class AsyncOperation: Operation, AnyAsyncOperation {
-    var failed: Bool = false
-    enum State: String {
+public class AsyncOperation: Operation, AnyAsyncOperation {
+    public var failed: Bool = false
+    public enum State: String {
         case ready, executing, finished
         fileprivate var keyPath: String {
             return "is" + self.rawValue.capitalized
         }
     }
-    var state = State.ready {
+    public var state = State.ready {
         willSet {
             willChangeValue(forKey: newValue.keyPath)
             willChangeValue(forKey: state.keyPath)
@@ -30,25 +30,25 @@ class AsyncOperation: Operation, AnyAsyncOperation {
             didChangeValue(forKey: state.keyPath)
         }
     }
-    override var isReady: Bool {
+    override public var isReady: Bool {
         return super.isReady && state == .ready
     }
-    override var isExecuting: Bool {
+    override public var isExecuting: Bool {
         return state == .executing
     }
-    override var isFinished: Bool {
+    override public var isFinished: Bool {
         return state == .finished
     }
-    override var isAsynchronous: Bool {
+    override public var isAsynchronous: Bool {
         return true
     }
-    override func start() {
+    override public func start() {
         if isCancelled { state = .finished; return }
         guard !hasCancelledDependencies else{ cancel(); return }
         state = .executing
         main()
     }
-    override func main() {
+    override public func main() {
         fatalError("Should be overriden in child class")
     }
     override func cancel() {
