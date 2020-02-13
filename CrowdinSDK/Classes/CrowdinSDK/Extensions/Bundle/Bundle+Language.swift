@@ -34,7 +34,7 @@ extension Bundle {
     }
     
     /// Returns detected preffered language from device settings and passed localizations. If bundle localizations is empty then return default locazation - "en".
-    func preferredLanguage(with availableLanguages: [String]) -> String {
+    public func preferredLanguage(with availableLanguages: [String]) -> String {
         return self.preferredLanguages(with: availableLanguages).first ?? defaultLocalization
     }
     

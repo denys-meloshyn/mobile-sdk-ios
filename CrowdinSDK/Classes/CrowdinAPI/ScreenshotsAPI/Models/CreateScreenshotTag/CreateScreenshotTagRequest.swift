@@ -7,11 +7,11 @@
 
 import Foundation
 
-typealias CreateScreenshotTagRequest = [CreateScreenshotTagRequestElement]
+public typealias CreateScreenshotTagRequest = [CreateScreenshotTagRequestElement]
 
-struct CreateScreenshotTagRequestElement: Codable {
-    let stringId: Int
-    let position: CreateScreenshotTagPosition
+public struct CreateScreenshotTagRequestElement: Codable {
+    public let stringId: Int
+    public let position: CreateScreenshotTagPosition
     
     enum CodingKeys: String, CodingKey {
         case stringId
@@ -19,6 +19,6 @@ struct CreateScreenshotTagRequestElement: Codable {
     }
 }
 
-struct CreateScreenshotTagPosition: Codable {
-    let x, y, width, height: Int
+public struct CreateScreenshotTagPosition: Codable {
+    public let x, y, width, height: Int
 }

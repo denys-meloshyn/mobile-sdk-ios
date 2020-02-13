@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct StorageUploadResponse: Codable {
-    let data: StorageUploadData
+public struct StorageUploadResponse: Codable {
+    public let data: StorageUploadData
 }
 
-struct StorageUploadData: Codable {
-    let id: Int
+public struct StorageUploadData: Codable {
+    public let id: Int
 }

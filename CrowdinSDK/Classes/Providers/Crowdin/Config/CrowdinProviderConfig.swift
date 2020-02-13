@@ -9,9 +9,9 @@ import Foundation
 import CrowdinSDK
 
 @objcMembers public class CrowdinProviderConfig: NSObject {
-    var hashString: String
-    var localizations: [String]
-    var sourceLanguage: String
+    public var hashString: String
+    public var localizations: [String]
+    public var sourceLanguage: String
     
     public init(hashString: String, localizations: [String], sourceLanguage: String) {
         self.hashString = hashString

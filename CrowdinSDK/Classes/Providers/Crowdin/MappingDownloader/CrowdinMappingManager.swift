@@ -24,7 +24,7 @@ public class CrowdinMappingManager: CrowdinMappingManagerProtocol {
     var stringsMapping: [String: String] = [:]
     var plurals: [AnyHashable: Any] = [:]
     
-    init(hash: String, sourceLanguage: String, enterprise: Bool) {
+    public init(hash: String, sourceLanguage: String, enterprise: Bool) {
         self.downloader = CrowdinMappingDownloader(enterprise: enterprise)
         self.downloader.getFiles(for: hash) { (files, error) in
             if let crowdinFiles = files {

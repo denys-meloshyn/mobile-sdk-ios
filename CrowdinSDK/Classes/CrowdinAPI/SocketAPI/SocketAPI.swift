@@ -8,7 +8,7 @@
 import Foundation
 import Starscream
 
-class SocketAPI: NSObject {
+public class SocketAPI: NSObject {
     fileprivate let defaultCrowdinErrorCode = 9999
     let hashString: String
 	let projectId: String
@@ -17,16 +17,16 @@ class SocketAPI: NSObject {
 	var wsUrl: String
 	
     var ws: WebSocket
-    var onConnect: (() -> Void)? = nil
-    var onError: ((Error) -> Void)? = nil
-    var didReceiveUpdateDraft: ((UpdateDraftResponse) -> Void)? = nil
-    var didReceiveUpdateTopSuggestion: ((TopSuggestionResponse) -> Void)? = nil
+    public var onConnect: (() -> Void)? = nil
+    public var onError: ((Error) -> Void)? = nil
+    public var didReceiveUpdateDraft: ((UpdateDraftResponse) -> Void)? = nil
+    public var didReceiveUpdateTopSuggestion: ((TopSuggestionResponse) -> Void)? = nil
     
-    var isConnected: Bool {
+    public var isConnected: Bool {
         return ws.isConnected
     }
     
-	init(hashString: String, projectId: String, projectWsHash: String, userId: String, wsUrl: String) {
+	public init(hashString: String, projectId: String, projectWsHash: String, userId: String, wsUrl: String) {
         self.hashString = hashString
 		self.projectId = projectId
 		self.projectWsHash = projectWsHash
@@ -39,15 +39,15 @@ class SocketAPI: NSObject {
         self.ws.delegate = self
     }
     
-    func connect() {
+    public func connect() {
         self.ws.connect()
     }
     
-    func disconect() {
+    public func disconect() {
         self.ws.disconnect()
     }
     
-    func subscribeOnUpdateDraft(localization: String, stringId: Int) {
+    public func subscribeOnUpdateDraft(localization: String, stringId: Int) {
         let event = "\(Events.updateDraft.rawValue):\(projectWsHash):\(projectId):\(userId):\(localization):\(stringId)"
         let action = ActionRequest.subscribeAction(with: event)
         guard let data = action.data else { return }
@@ -55,7 +55,7 @@ class SocketAPI: NSObject {
         self.ws.write(data: data)
     }
     
-    func subscribeOnUpdateTopSuggestion(localization: String, stringId: Int) {
+    public func subscribeOnUpdateTopSuggestion(localization: String, stringId: Int) {
         let event = "\(Events.topSuggestion.rawValue):\(projectWsHash):\(projectId):\(localization):\(stringId)"
         let action = ActionRequest.subscribeAction(with: event)
         guard let data = action.data else { return }
@@ -65,11 +65,11 @@ class SocketAPI: NSObject {
 }
 
 extension SocketAPI: WebSocketDelegate {
-    func websocketDidConnect(socket: WebSocketClient) {
+    public func websocketDidConnect(socket: WebSocketClient) {
         self.onConnect?()
     }
     
-    func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
+    public func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         if let error = error {
             self.onError?(error)
         } else {
@@ -77,7 +77,7 @@ extension SocketAPI: WebSocketDelegate {
         }
     }
     
-    func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
+    public func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         guard let data = text.data(using: .utf8) else { return }
         if let response = try? JSONDecoder().decode(UpdateDraftResponse.self, from: data) {
             self.didReceiveUpdateDraft?(response)
@@ -86,7 +86,7 @@ extension SocketAPI: WebSocketDelegate {
         }
     }
     
-    func websocketDidReceiveData(socket: WebSocketClient, data: Data) { }
+    public func websocketDidReceiveData(socket: WebSocketClient, data: Data) { }
 }
 
 extension SocketAPI {

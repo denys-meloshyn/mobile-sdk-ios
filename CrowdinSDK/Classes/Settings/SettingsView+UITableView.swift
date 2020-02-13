@@ -5,7 +5,11 @@
 //  Created by Serhii Londar on 4/6/19.
 //
 
-import Foundation
+import UIKit
+import CrowdinIntervalUpdates
+import CrowdinRealtimeUpdates
+import CrowdinScreenshots
+import CrowdinSDK
 
 extension SettingsView {
     func registerCells() {
@@ -18,7 +22,7 @@ extension SettingsView {
         
         if let reloadCell = tableView.dequeueReusableCell(withIdentifier: "SettingsItemCell") as? SettingsItemCell {
             reloadCell.action = {
-                RefreshLocalizationFeature.refreshLocalization()
+                CrowdinSDK.refreshLocalization()
                 self.open = false
             }
             reloadCell.icon.image = UIImage(named: "reload", in: Bundle.resourceBundle, compatibleWith: nil)
@@ -28,15 +32,19 @@ extension SettingsView {
             cells.append(reloadCell)
         }
         
-        if var feature = IntervalUpdateFeature.shared {
+        if CrowdinSDK.config.intervalUpdatesEnabled {
             if let autoreloadCell = tableView.dequeueReusableCell(withIdentifier: "SettingsItemCell") as? SettingsItemCell {
                 autoreloadCell.action = {
-                    feature.enabled = !feature.enabled
-                    autoreloadCell.icon.image = UIImage(named: feature.enabled ? "auto-updates-on" : "auto-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
+                    if CrowdinSDK.intervalUpdatesEnabled {
+                        CrowdinSDK.stopIntervalUpdates()
+                    } else if let localizationUpdatesInterval = CrowdinSDK.config.localizationUpdatesInterval {
+                        CrowdinSDK.startIntervalUpdates(interval: localizationUpdatesInterval)
+                    }
+                    autoreloadCell.icon.image = UIImage(named: CrowdinSDK.intervalUpdatesEnabled ? "auto-updates-on" : "auto-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
                     self.tableView.reloadData()
                     self.open = false
                 }
-                autoreloadCell.icon.image = UIImage(named: feature.enabled ? "auto-updates-on" : "auto-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
+                autoreloadCell.icon.image = UIImage(named: CrowdinSDK.intervalUpdatesEnabled ? "auto-updates-on" : "auto-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
                 autoreloadCell.selectionStyle = .none
                 autoreloadCell.contentView.layer.cornerRadius = 30.0
                 autoreloadCell.contentView.clipsToBounds = true
@@ -44,15 +52,19 @@ extension SettingsView {
             }
         }
         
-        if var feature = RealtimeUpdateFeature.shared {
+        if CrowdinSDK.config.realtimeUpdatesEnabled {
             if let realtimeUpdateCell = tableView.dequeueReusableCell(withIdentifier: "SettingsItemCell") as? SettingsItemCell {
                 realtimeUpdateCell.action = {
-                    feature.enabled = !feature.enabled
-                    realtimeUpdateCell.icon.image = UIImage(named: feature.enabled ? "realtime-updates-on" : "realtime-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
+                    if CrowdinSDK.realtimeUpdatesEnabled {
+                        CrowdinSDK.stopRealtimeUpdates()
+                    } else {
+                        CrowdinSDK.startRealtimeUpdates(success: nil, error: nil)
+                    }
+                    realtimeUpdateCell.icon.image = UIImage(named: CrowdinSDK.realtimeUpdatesEnabled ? "realtime-updates-on" : "realtime-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
                     self.tableView.reloadData()
                     self.open = false
                 }
-                realtimeUpdateCell.icon.image = UIImage(named: feature.enabled ? "realtime-updates-on" : "realtime-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
+                realtimeUpdateCell.icon.image = UIImage(named: CrowdinSDK.realtimeUpdatesEnabled ? "realtime-updates-on" : "realtime-updates-off", in: Bundle.resourceBundle, compatibleWith: nil)
                 realtimeUpdateCell.selectionStyle = .none
                 realtimeUpdateCell.contentView.layer.cornerRadius = 30.0
                 realtimeUpdateCell.contentView.clipsToBounds = true
@@ -60,15 +72,16 @@ extension SettingsView {
             }
         }
         
-        if let feature = ScreenshotFeature.shared {
+        if CrowdinSDK.config.screenshotsEnabled {
             if let screenshotCell = tableView.dequeueReusableCell(withIdentifier: "SettingsItemCell") as? SettingsItemCell {
                 screenshotCell.action = {
                     self.isHidden = true
-                    feature.captureScreenshot(name: String(Date().timeIntervalSince1970), success: {
+                    let screenshotName = String(Date().timeIntervalSince1970)
+                    CrowdinSDK.captureScreenshot(name: screenshotName, success: {
                         print("Success")
-                    }, errorHandler: { (error) in
+                    }) { (error) in
                         print("Error uploading screenshot - \(error?.localizedDescription ?? "Unknown")")
-                    })
+                    }
                     self.isHidden = false
                     self.open = false
                 }

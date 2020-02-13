@@ -5,7 +5,8 @@
 //  Created by Serhii Londar on 6/1/19.
 //
 
-import Foundation
+import UIKit
+import CrowdinSDK
 
 extension CrowdinSDK {
     @objc class func initializeSettings() {

@@ -11,6 +11,6 @@ extension Bundle {
     class var resourceBundle: Bundle {
         // swiftlint:disable force_unwrapping
         let assetPath = Bundle(for: SettingsView.self).resourcePath!
-        return Bundle(path: assetPath + String.pathDelimiter + "CrowdinSDK.bundle")!
+        return Bundle(path: assetPath + "/CrowdinSDK.bundle")!
     }
 }

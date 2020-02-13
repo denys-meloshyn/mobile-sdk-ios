@@ -9,7 +9,7 @@ import Foundation
 
 let defaultLocalization = "en"
 let baseLocalization = "Base"
-let defaultCrowdinErrorCode = 99999
+public let defaultCrowdinErrorCode = 99999
 
 enum Strings: String {
     case Crowdin

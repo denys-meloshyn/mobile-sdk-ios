@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import CoreGraphics
 import BaseAPI
 
-class ScreenshotsAPI: CrowdinAPI {
+public class ScreenshotsAPI: CrowdinAPI {
     override var apiPath: String {
         return "projects"
     }
@@ -17,7 +18,7 @@ class ScreenshotsAPI: CrowdinAPI {
         return "\(fullPath)/\(projectId)/screenshots"
     }
 
-    func createScreenshot(projectId: Int, storageId: Int, name: String, autoTag: Bool = false, completion: @escaping (CreateScreenshotResponse?, Error?) -> Void) {
+    public func createScreenshot(projectId: Int, storageId: Int, name: String, autoTag: Bool = false, completion: @escaping (CreateScreenshotResponse?, Error?) -> Void) {
         let request = CreateScreenshotRequest(storageId: storageId, name: name, autoTag: autoTag)
         let requestData = try? JSONEncoder().encode(request)
         let url = baseUrl(with: projectId)
@@ -25,7 +26,7 @@ class ScreenshotsAPI: CrowdinAPI {
         self.cw_post(url: url, headers: headers, body: requestData, completion: completion)
     }
     
-    func createScreenshotTags(projectId: Int, screenshotId: Int, frames: [(id: Int, rect: CGRect)], completion: @escaping (CreateScreenshotTagResponse?, Error?) -> Void) {
+    public func createScreenshotTags(projectId: Int, screenshotId: Int, frames: [(id: Int, rect: CGRect)], completion: @escaping (CreateScreenshotTagResponse?, Error?) -> Void) {
         var elements = [CreateScreenshotTagRequestElement]()
         for frame in frames {
             let key = frame.id
