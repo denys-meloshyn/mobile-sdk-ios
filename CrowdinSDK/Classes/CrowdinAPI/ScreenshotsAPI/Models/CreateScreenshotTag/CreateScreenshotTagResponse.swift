@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct CreateScreenshotTagResponse: Codable {
-    let data: [CreateScreenshotTagDatum]
-    let pagination: CreateScreenshotTagPagination
+public struct CreateScreenshotTagResponse: Codable {
+    public let data: [CreateScreenshotTagDatum]
+    public let pagination: CreateScreenshotTagPagination
 }
 
-struct CreateScreenshotTagDatum: Codable {
-    let data: CreateScreenshotTagData
+public struct CreateScreenshotTagDatum: Codable {
+    public let data: CreateScreenshotTagData
 }
 
-struct CreateScreenshotTagData: Codable {
-    let id, screenshotId, stringId: Int
-    let position: CreateScreenshotTagPosition
-    let createdAt: String
+public struct CreateScreenshotTagData: Codable {
+    public let id, screenshotId, stringId: Int
+    public let position: CreateScreenshotTagPosition
+    public let createdAt: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -29,6 +29,6 @@ struct CreateScreenshotTagData: Codable {
     }
 }
 
-struct CreateScreenshotTagPagination: Codable {
-    let offset, limit: Int
+public struct CreateScreenshotTagPagination: Codable {
+    public let offset, limit: Int
 }

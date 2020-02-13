@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct CreateScreenshotResponse: Codable {
-    let data: CreateScreenshotData
+public struct CreateScreenshotResponse: Codable {
+    public let data: CreateScreenshotData
 }
 
-struct CreateScreenshotData: Codable {
-    let id, userID: Int
-    let url, name: String
-    let size: CreateScreenshotSize
-    let tagsCount: Int
-    let tags: [CreateScreenshotTag]
-    let createdAt, updatedAt: String
+public struct CreateScreenshotData: Codable {
+    public let id, userID: Int
+    public let url, name: String
+    public let size: CreateScreenshotSize
+    public let tagsCount: Int
+    public let tags: [CreateScreenshotTag]
+    public let createdAt, updatedAt: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -26,14 +26,14 @@ struct CreateScreenshotData: Codable {
     }
 }
 
-struct CreateScreenshotSize: Codable {
-    let width, height: Int
+public struct CreateScreenshotSize: Codable {
+    public let width, height: Int
 }
 
-struct CreateScreenshotTag: Codable {
-    let id, screenshotID, stringID: Int
-    let position: CreateScreenshotPosition
-    let createdAt: String
+public struct CreateScreenshotTag: Codable {
+    public let id, screenshotID, stringID: Int
+    public let position: CreateScreenshotPosition
+    public let createdAt: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -43,6 +43,6 @@ struct CreateScreenshotTag: Codable {
     }
 }
 
-struct CreateScreenshotPosition: Codable {
-    let x, y, width, height: Int
+public struct CreateScreenshotPosition: Codable {
+    public let x, y, width, height: Int
 }

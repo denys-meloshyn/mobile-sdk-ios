@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct UpdateDraftResponse: Codable {
-    let event: String?
-    let data: UpdateDraftResponseData?
+public struct UpdateDraftResponse: Codable {
+    public let event: String?
+    public let data: UpdateDraftResponseData?
 }
 
-struct UpdateDraftResponseData: Codable {
-    let text, pluralForm: String?
+public struct UpdateDraftResponseData: Codable {
+    public let text, pluralForm: String?
 }

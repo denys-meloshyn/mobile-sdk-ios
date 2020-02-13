@@ -67,7 +67,7 @@ public typealias CrowdinSDKLocalizationUpdateError = ([Error]) -> Void
     public class var inBundleLocalizations: [String] { return Localization.current?.inBundle ?? Bundle.main.localizations }
     
     // swiftlint:disable implicitly_unwrapped_optional
-    static var config: CrowdinSDKConfig!
+    public static var config: CrowdinSDKConfig!
     
     ///
     public class func stop() {
@@ -164,6 +164,11 @@ public typealias CrowdinSDKLocalizationUpdateError = ([Error]) -> Void
     /// Remove all error handlers.
     public class func removeAllErrorHandlers() {
         Localization.current.removeAllErrorHandlers()
+    }
+    
+    /// Method for refresing localization strings. 
+    public class func refreshLocalization() {
+        Localization.current?.provider.refreshLocalization()
     }
 }
 

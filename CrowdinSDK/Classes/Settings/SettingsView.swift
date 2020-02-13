@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreGraphics
+import UIKit
 
 class SettingsView: UIView {
     // swiftlint:disable force_unwrapping

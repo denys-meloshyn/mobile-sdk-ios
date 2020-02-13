@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct TopSuggestionResponse: Codable {
-    let event: String?
-    let data: TopSuggestionResponseData?
+public struct TopSuggestionResponse: Codable {
+    public let event: String?
+    public let data: TopSuggestionResponseData?
 }
 
-struct TopSuggestionResponseData: Codable {
-    let id, userID, time, text: String?
-    let wordsCount: String?
+public struct TopSuggestionResponseData: Codable {
+    public let id, userID, time, text: String?
+    public let wordsCount: String?
     
     enum CodingKeys: String, CodingKey {
         case id
