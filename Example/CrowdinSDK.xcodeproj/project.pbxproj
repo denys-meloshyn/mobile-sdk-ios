@@ -86,7 +86,7 @@
 		DED704D7359DAC03416512CF /* Pods-CrowdinSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrowdinSDK_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CrowdinSDK_Example/Pods-CrowdinSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E8A6005023F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinRealtimeUpdates.podspec; path = ../CrowdinRealtimeUpdates.podspec; sourceTree = "<group>"; };
 		E8A6005123F473FC00C47B20 /* CrowdinScreenshots.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinScreenshots.podspec; path = ../CrowdinScreenshots.podspec; sourceTree = "<group>"; };
-		E8A6005223F473FC00C47B20 /* CrowdinIntervalUpdates.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinIntervalUpdates.podspec; path = ../CrowdinIntervalUpdates.podspec; sourceTree = "<group>"; };
+		E8A6005223F473FC00C47B20 /* CrowdinIntervalUpdates.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinIntervalUpdates.podspec; path = ../CrowdinIntervalUpdates.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E8A6005423F473FC00C47B20 /* CrowdinSettings.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinSettings.podspec; path = ../CrowdinSettings.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,6 +277,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				1CF4D24802B3C1A925FA166E /* [CP] Embed Pods Frameworks */,
 				92C227AD21FA71E9009AFC1F /* ShellScript */,
+				9CED0A668567910F3E6C2A0B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -443,6 +444,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd ../CrowdinSDK/Classes\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		9CED0A668567910F3E6C2A0B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CrowdinSDK_Example/Pods-CrowdinSDK_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/CrowdinSettings/CrowdinSettings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/CrowdinSettings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CrowdinSDK_Example/Pods-CrowdinSDK_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
