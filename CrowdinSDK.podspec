@@ -34,9 +34,12 @@ Pod::Spec.new do |spec|
   spec.frameworks = 'UIKit'
   spec.static_framework = true
   spec.swift_version = '4.2'
-  spec.source_files = 'CrowdinSDK/Classes/CrowdinSDK/**/*'
+  spec.source_files = ['CrowdinSDK/Classes/CrowdinSDK/**/*', 'CrowdinSDK/Classes/CrowdinAPI/**/*', 'CrowdinSDK/Classes/Login/**/*', 'CrowdinSDK/Classes/Providers/Crowdin/**/*']
+  
+  spec.dependency 'BaseAPI'
+  spec.dependency 'Starscream', '3.1.1'
   
   spec.test_spec 'CrowdinSDK_Tests' do |test_spec|
-    test_spec.source_files = 'CrowdinSDK/Tests/Core/*.swift'
+    test_spec.source_files = 'CrowdinSDK/Tests/**/*.swift'
   end
 end

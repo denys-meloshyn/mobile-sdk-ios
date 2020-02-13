@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CrowdinAPI
 
 class CrowdinPluralsDownloadOperation: CrowdinDownloadOperation {
     var completion: (([AnyHashable: Any]?, Error?) -> Void)? = nil

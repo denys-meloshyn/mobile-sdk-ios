@@ -38,11 +38,7 @@
 		E8A6005823F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005023F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec */; };
 		E8A6005923F473FC00C47B20 /* CrowdinScreenshots.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005123F473FC00C47B20 /* CrowdinScreenshots.podspec */; };
 		E8A6005A23F473FC00C47B20 /* CrowdinIntervalUpdates.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005223F473FC00C47B20 /* CrowdinIntervalUpdates.podspec */; };
-		E8A6005B23F473FC00C47B20 /* CrowdinLogin.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005323F473FC00C47B20 /* CrowdinLogin.podspec */; };
 		E8A6005C23F473FC00C47B20 /* CrowdinSettings.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005423F473FC00C47B20 /* CrowdinSettings.podspec */; };
-		E8A6005D23F473FC00C47B20 /* CrowdinProvider.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005523F473FC00C47B20 /* CrowdinProvider.podspec */; };
-		E8A6005E23F473FC00C47B20 /* CrowdinRefreshLocalization.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005623F473FC00C47B20 /* CrowdinRefreshLocalization.podspec */; };
-		E8A6005F23F473FC00C47B20 /* CrowdinAPI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E8A6005723F473FC00C47B20 /* CrowdinAPI.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,11 +87,7 @@
 		E8A6005023F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinRealtimeUpdates.podspec; path = ../CrowdinRealtimeUpdates.podspec; sourceTree = "<group>"; };
 		E8A6005123F473FC00C47B20 /* CrowdinScreenshots.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinScreenshots.podspec; path = ../CrowdinScreenshots.podspec; sourceTree = "<group>"; };
 		E8A6005223F473FC00C47B20 /* CrowdinIntervalUpdates.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinIntervalUpdates.podspec; path = ../CrowdinIntervalUpdates.podspec; sourceTree = "<group>"; };
-		E8A6005323F473FC00C47B20 /* CrowdinLogin.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinLogin.podspec; path = ../CrowdinLogin.podspec; sourceTree = "<group>"; };
 		E8A6005423F473FC00C47B20 /* CrowdinSettings.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinSettings.podspec; path = ../CrowdinSettings.podspec; sourceTree = "<group>"; };
-		E8A6005523F473FC00C47B20 /* CrowdinProvider.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinProvider.podspec; path = ../CrowdinProvider.podspec; sourceTree = "<group>"; };
-		E8A6005623F473FC00C47B20 /* CrowdinRefreshLocalization.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinRefreshLocalization.podspec; path = ../CrowdinRefreshLocalization.podspec; sourceTree = "<group>"; };
-		E8A6005723F473FC00C47B20 /* CrowdinAPI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = CrowdinAPI.podspec; path = ../CrowdinAPI.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +156,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				E8A6005723F473FC00C47B20 /* CrowdinAPI.podspec */,
 				E8A6005223F473FC00C47B20 /* CrowdinIntervalUpdates.podspec */,
-				E8A6005323F473FC00C47B20 /* CrowdinLogin.podspec */,
-				E8A6005523F473FC00C47B20 /* CrowdinProvider.podspec */,
 				E8A6005023F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec */,
-				E8A6005623F473FC00C47B20 /* CrowdinRefreshLocalization.podspec */,
 				E8A6005123F473FC00C47B20 /* CrowdinScreenshots.podspec */,
 				E8A6005423F473FC00C47B20 /* CrowdinSettings.podspec */,
 				B6F546A884490E44874B37E1 /* CrowdinSDK.podspec */,
@@ -344,14 +332,11 @@
 				C82D2893220B431C00DB239B /* MainViewController.storyboard in Resources */,
 				92E65440224F8090009178C6 /* Localizable.strings in Resources */,
 				9255BF4C21FCBE2D00C80A40 /* GoogleService-Info.plist in Resources */,
-				E8A6005E23F473FC00C47B20 /* CrowdinRefreshLocalization.podspec in Resources */,
 				E8A6005923F473FC00C47B20 /* CrowdinScreenshots.podspec in Resources */,
 				E8A6005823F473FC00C47B20 /* CrowdinRealtimeUpdates.podspec in Resources */,
 				C836C159221B1EF2006CEECF /* StringsVC.storyboard in Resources */,
 				92E65443224F8093009178C6 /* Localizable.stringsdict in Resources */,
 				9268149821FCD60E0052F778 /* MenuVC.storyboard in Resources */,
-				E8A6005D23F473FC00C47B20 /* CrowdinProvider.podspec in Resources */,
-				E8A6005F23F473FC00C47B20 /* CrowdinAPI.podspec in Resources */,
 				E8A6005C23F473FC00C47B20 /* CrowdinSettings.podspec in Resources */,
 				9232187221FE059F009F8339 /* DetailsVC.storyboard in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -360,7 +345,6 @@
 				9232188421FE21E0009F8339 /* SettingsVC.storyboard in Resources */,
 				E8A6005A23F473FC00C47B20 /* CrowdinIntervalUpdates.podspec in Resources */,
 				92ECA8E622495E41000DD994 /* PluralsVC.storyboard in Resources */,
-				E8A6005B23F473FC00C47B20 /* CrowdinLogin.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

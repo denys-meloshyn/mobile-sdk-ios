@@ -16,12 +16,44 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
+    /// Resource file `CrowdinIntervalUpdates.podspec`.
+    static let crowdinIntervalUpdatesPodspec = Rswift.FileResource(bundle: R.hostingBundle, name: "CrowdinIntervalUpdates", pathExtension: "podspec")
+    /// Resource file `CrowdinRealtimeUpdates.podspec`.
+    static let crowdinRealtimeUpdatesPodspec = Rswift.FileResource(bundle: R.hostingBundle, name: "CrowdinRealtimeUpdates", pathExtension: "podspec")
+    /// Resource file `CrowdinScreenshots.podspec`.
+    static let crowdinScreenshotsPodspec = Rswift.FileResource(bundle: R.hostingBundle, name: "CrowdinScreenshots", pathExtension: "podspec")
+    /// Resource file `CrowdinSettings.podspec`.
+    static let crowdinSettingsPodspec = Rswift.FileResource(bundle: R.hostingBundle, name: "CrowdinSettings", pathExtension: "podspec")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `Localizable.plist`.
     static let localizablePlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Localizable", pathExtension: "plist")
+    
+    /// `bundle.url(forResource: "CrowdinIntervalUpdates", withExtension: "podspec")`
+    static func crowdinIntervalUpdatesPodspec(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.crowdinIntervalUpdatesPodspec
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "CrowdinRealtimeUpdates", withExtension: "podspec")`
+    static func crowdinRealtimeUpdatesPodspec(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.crowdinRealtimeUpdatesPodspec
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "CrowdinScreenshots", withExtension: "podspec")`
+    static func crowdinScreenshotsPodspec(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.crowdinScreenshotsPodspec
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
+    /// `bundle.url(forResource: "CrowdinSettings", withExtension: "podspec")`
+    static func crowdinSettingsPodspec(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.crowdinSettingsPodspec
+      return fileResource.bundle.url(forResource: fileResource)
+    }
     
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {

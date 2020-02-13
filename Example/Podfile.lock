@@ -1,12 +1,8 @@
 PODS:
   - BaseAPI (0.1.7)
-  - CrowdinAPI (1.1.0):
-    - BaseAPI (= 0.1.7)
-    - Starscream (~> 3.0.6)
-  - CrowdinProvider (1.1.0):
-    - CrowdinAPI
-    - CrowdinSDK
-  - CrowdinSDK (1.1.0)
+  - CrowdinSDK (1.1.0):
+    - BaseAPI
+    - Starscream (= 3.1.1)
   - DateToolsSwift (4.0.0)
   - FAPanels (1.0.2)
   - FileBrowser (1.0.0)
@@ -71,11 +67,10 @@ PODS:
   - R.swift (5.0.1):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
-  - Starscream (3.0.6)
+  - Starscream (3.1.1)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
-  - CrowdinProvider (from `../`)
   - CrowdinSDK (from `../`)
   - DateToolsSwift
   - FAPanels
@@ -86,8 +81,6 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  "git@github.com:serhii-londar/CrowdinSpecs.git":
-    - CrowdinAPI
   https://github.com/CocoaPods/Specs.git:
     - BaseAPI
     - DateToolsSwift
@@ -108,8 +101,6 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
-  CrowdinProvider:
-    :path: "../"
   CrowdinSDK:
     :path: "../"
   FileBrowser:
@@ -122,9 +113,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BaseAPI: 78f88151221ac5d2dcc2dda69cf3aab6773fd8eb
-  CrowdinAPI: 377e907ab3066cd46ca44b385f379b16106748f4
-  CrowdinProvider: 8d50dc0fa0ba4a37ef466c7684fa4a8c57301232
-  CrowdinSDK: 333bedf9e485254d371573f97033956603a9f408
+  CrowdinSDK: 8a1be41ca919b7a6123dc76622fc7e3d0d16cd0b
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   FAPanels: 520037c53f4ded152e8e6103d97f79b644473363
   FileBrowser: 7a361252fed9fe35d95735a39d149b1cac5601d0
@@ -140,9 +129,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   R.swift: a8e1a7e7f38441282fbcb7a3c266076eb38b77ba
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
-  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 1f35ec13aec9fd095aff344323268d4a1c8bf621
+PODFILE CHECKSUM: ce39956bb9dcf6112947c2707da19078580d5a58
 
 COCOAPODS: 1.8.4
