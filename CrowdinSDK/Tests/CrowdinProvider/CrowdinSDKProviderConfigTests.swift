@@ -9,6 +9,10 @@ class CrowdinSDKProviderConfigTests: XCTestCase {
         self.providerConfig = CrowdinProviderConfig(hashString: "test_hash", localizations: ["en", "de", "uk"], sourceLanguage: "en")
     }
     
+    override func tearDown() {
+        CrowdinSDKConfig.config().crowdinProviderConfig = nil
+    }
+    
     func testDefaultConfigInitialization() {
         let config = CrowdinSDKConfig.config()
         XCTAssertNil(config.crowdinProviderConfig)
