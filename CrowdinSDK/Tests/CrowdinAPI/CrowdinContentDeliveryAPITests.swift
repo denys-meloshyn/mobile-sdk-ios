@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import CrowdinAPI
+@testable import CrowdinSDK
 
 class CrowdinContentDeliveryAPITests: XCTestCase {
     var session = URLSessionMock()

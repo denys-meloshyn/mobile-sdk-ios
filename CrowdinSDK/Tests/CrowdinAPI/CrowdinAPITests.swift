@@ -1,5 +1,5 @@
 import XCTest
-@testable import CrowdinAPI
+@testable import CrowdinSDK
 
 class CrowdinAPITests: XCTestCase {
     // swiftlint:disable implicitly_unwrapped_optional
