@@ -35,9 +35,6 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.swift_version = '4.2'
   
-  spec.source_files = 'CrowdinSDK/Classes/Features/RealtimeUpdateFeature/**/*.swift'
+  spec.source_files = 'CrowdinSDK/Classes/Features/RealtimeUpdates/**/*.swift'
   spec.dependency 'CrowdinSDK'
-  spec.dependency 'CrowdinProvider'
-  spec.dependency 'CrowdinAPI'
-  spec.dependency 'CrowdinLogin'
 end

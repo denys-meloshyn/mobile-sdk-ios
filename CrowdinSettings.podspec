@@ -39,10 +39,6 @@ Pod::Spec.new do |spec|
   spec.resource_bundle = { 'CrowdinSettings' => 'CrowdinSDK/Assets/Settings/*.{storyboard,xib,xcassets}'}
   spec.dependency 'CrowdinScreenshots'
   spec.dependency 'CrowdinRealtimeUpdate'
-  spec.dependency 'CrowdinRefreshLocalization'
   spec.dependency 'CrowdinIntervalUpdate'
   spec.dependency 'CrowdinSDK'
-  spec.dependency 'CrowdinProvider'
-  spec.dependency 'CrowdinAPI'
-  spec.dependency 'CrowdinLogin'
 end

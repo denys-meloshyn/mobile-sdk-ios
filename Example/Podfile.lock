@@ -1,7 +1,13 @@
 PODS:
   - BaseAPI (0.1.7)
+  - CrowdinIntervalUpdates (1.1.0):
+    - CrowdinSDK
+  - CrowdinRealtimeUpdates (1.1.0):
+    - CrowdinSDK
+  - CrowdinScreenshots (1.1.0):
+    - CrowdinSDK
   - CrowdinSDK (1.1.0):
-    - BaseAPI
+    - BaseAPI (= 0.1.7)
     - Starscream (= 3.1.1)
   - DateToolsSwift (4.0.0)
   - FAPanels (1.0.2)
@@ -71,6 +77,9 @@ PODS:
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
+  - CrowdinIntervalUpdates (from `../`)
+  - CrowdinRealtimeUpdates (from `../`)
+  - CrowdinScreenshots (from `../`)
   - CrowdinSDK (from `../`)
   - DateToolsSwift
   - FAPanels
@@ -101,6 +110,12 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
+  CrowdinIntervalUpdates:
+    :path: "../"
+  CrowdinRealtimeUpdates:
+    :path: "../"
+  CrowdinScreenshots:
+    :path: "../"
   CrowdinSDK:
     :path: "../"
   FileBrowser:
@@ -113,7 +128,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BaseAPI: 78f88151221ac5d2dcc2dda69cf3aab6773fd8eb
-  CrowdinSDK: 8a1be41ca919b7a6123dc76622fc7e3d0d16cd0b
+  CrowdinIntervalUpdates: e5efb7b734ac2549f663febdc5ae73adef2f6412
+  CrowdinRealtimeUpdates: b632b7aefefe5cfcb5cfe71a02b8b83a2da79450
+  CrowdinScreenshots: 0c81d729d1542e647400f6fec3dc070e18b4b8c2
+  CrowdinSDK: 71e32ea6b87cf97034baafda363ed94ce588cfc2
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   FAPanels: 520037c53f4ded152e8e6103d97f79b644473363
   FileBrowser: 7a361252fed9fe35d95735a39d149b1cac5601d0
@@ -132,6 +150,6 @@ SPEC CHECKSUMS:
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: ce39956bb9dcf6112947c2707da19078580d5a58
+PODFILE CHECKSUM: 85037f22a88c59fc6b309c33771356f9f09c0262
 
 COCOAPODS: 1.8.4

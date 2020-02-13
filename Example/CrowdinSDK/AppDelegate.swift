@@ -8,6 +8,9 @@
 
 import UIKit
 import CrowdinSDK
+import CrowdinIntervalUpdates
+import CrowdinRealtimeUpdates
+import CrowdinScreenshots
 import Firebase
 import FAPanels
 
@@ -51,9 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                   redirectURI: "crowdintest://")
 		let crowdinSDKConfig = CrowdinSDKConfig.config().with(crowdinProviderConfig: crowdinProviderConfig)
                                                         .with(loginConfig: loginConfig)
+                                                        .with(intervalUpdatesEnabled: true, interval: 15 * 60)
 //                                                        .with(settingsEnabled: true)
-//                                                        .with(realtimeUpdatesEnabled: true)
-//                                                        .with(screenshotsEnabled: true)
+                                                        .with(realtimeUpdatesEnabled: true)
+                                                        .with(screenshotsEnabled: true)
 		CrowdinSDK.startWithConfig(crowdinSDKConfig)
         
 //		Setup CrowdinSDK with Info.plist. Initializes only localization delivery feature.
