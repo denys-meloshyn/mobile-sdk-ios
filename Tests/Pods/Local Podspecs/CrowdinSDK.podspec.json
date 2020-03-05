@@ -20,7 +20,7 @@
     "ios": "9.0"
   },
   "frameworks": "UIKit",
-  "static_framework": true,
+  "static_framework": false,
   "swift_versions": "4.2",
   "source_files": [
     "CrowdinSDK/Classes/CrowdinSDK/**/*",

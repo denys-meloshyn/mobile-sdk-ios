@@ -32,7 +32,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '9.0'
   
   spec.frameworks = 'UIKit'
-  spec.static_framework = true
+  spec.static_framework = false
   spec.swift_version = '4.2'
   spec.source_files = ['CrowdinSDK/Classes/CrowdinSDK/**/*', 'CrowdinSDK/Classes/CrowdinAPI/**/*', 'CrowdinSDK/Classes/Login/**/*', 'CrowdinSDK/Classes/Providers/Crowdin/**/*']
   

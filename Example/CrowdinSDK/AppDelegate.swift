@@ -13,6 +13,7 @@ import CrowdinRealtimeUpdates
 import CrowdinScreenshots
 import CrowdinSettings
 import Firebase
+
 import FAPanels
 
 @UIApplicationMain
@@ -20,9 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Firebase
-        FirebaseApp.configure()
-
         // Setup only crowdin provider:
 //        let crowdinProviderConfig = CrowdinProviderConfig(hashString: "1c2f58c7c711435295d2408106i", stringsFileNames: ["/%osx_locale%/Localizable.strings"], pluralsFileNames: ["Localizable.stringsdict"], localizations: ["en", "de"], sourceLanguage: "en")
 //        CrowdinSDK.startWithConfig(CrowdinSDKConfig.config().with(crowdinProviderConfig: crowdinProviderConfig))
@@ -51,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 														  sourceLanguage: "en")
 		let loginConfig = try! CrowdinLoginConfig(clientId: "test-sdk",
                                                   clientSecret: "79MG6E8DZfEeomalfnoKx7dA0CVuwtPC3jQTB3ts",
-                                                  scope: "project.screenshot",
+                                                  scope: "project",
                                                   redirectURI: "crowdintest://")
 		let crowdinSDKConfig = CrowdinSDKConfig.config().with(crowdinProviderConfig: crowdinProviderConfig)
                                                         .with(loginConfig: loginConfig)
